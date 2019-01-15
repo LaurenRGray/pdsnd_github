@@ -2,6 +2,7 @@ import time
 import pandas as pd
 import numpy as np
 
+# initialize global variables
 CITY_DATA = { 'Chicago': 'chicago.csv',
               'New York': 'new_york_city.csv',
               'Washington': 'washington.csv' }
@@ -10,7 +11,13 @@ months = ['January', 'February', 'March', 'April', 'May', 'June', 'All']
 days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'All']
 cities = ['Chicago', 'New York', 'Washington', 'All']
 
+
 def prompt_for_raw_data(city):
+    """
+    Helper method that asks user whether he/she would like to view the raw data.
+    As long as the user response with 'Y', he/she will see more rows of data.
+
+    """
     while True:
         response = input('Would you like to see the first 5 rows of raw data (Y/N)?\n').title()
         if response != 'Y' and response != 'N':
