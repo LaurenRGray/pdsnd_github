@@ -19,7 +19,7 @@ def prompt_for_raw_data(city):
             break
             
     if response == 'Y':
-        file = open(CITY_DATA[city])
+        with open(CITY_DATA[city]) as file:
         for i in range(0, 5):
             print(file.readline())
 
